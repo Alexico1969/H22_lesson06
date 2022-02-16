@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% set page_title="Login" %}
+
+{% block heading %}
+  <h1>Login to create memes!</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+      <form method="POST" action="{{url_for('login_page')}}">
+          <p>{{error}}</p>
+          <input type="text" name="username" autocomplete="off" placeholder="Username">
+          <input type="password" name="password" autocomplete="off"  placeholder="Password">
+          <input type="submit" value="Login">
+      </form>
+  </div>
+  
+  <h1>Don't have an account, sign up here.</h1>
+  <div class="container">
+     <form method="POST" action="{{url_for('signup')}}">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+       <input type="password" name="confirm-password" placeholder="Confirm Password">
+        <input type="submit" value="Sign up">
+     </form>
+  </div>
+{% endblock %}

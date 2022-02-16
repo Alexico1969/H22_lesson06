@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="{{url_for('static', filename='helper.js') }}"> </script>
+  </head>
+  <body>
+    {% block heading %} {% endblock %}
+    <div class="links">
+        {% if logged_in %}
+          <a href="{{url_for('logout')}}">Logout</a>
+        {% endif %}
+    </div>
+    {% block content %} {% endblock %}
+
+    <div class="footer">Brought to you by CodeWizardsHQ</div>
+  </body>
+</html>
